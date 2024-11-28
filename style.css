@@ -1,0 +1,70 @@
+/* Tambahan untuk CSS Animasi */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f8f9fa; /* Warna latar belakang yang lebih cerah */
+}
+
+input {
+    padding: 10px;
+    margin: 10px;
+    width: 200px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.percentage-bar {
+    width: 100%;
+    background-color: #f3f3f3;
+    border-radius: 5px;
+    margin: 20px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Progress bar fill with smooth animation */
+.percentage-fill {
+    height: 20px;
+    width: 0; /* Start with width 0 */
+    background-color: #ff6f61; /* Warna Cupid merah */
+    border-radius: 5px;
+    transition: width 1s ease; /* Smooth animation */
+}
+
+/* Button styling */
+.submit-btn {
+    background-color: #ff6f61; /* Warna Cupid merah */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.submit-btn:hover {
+    background-color: #ff4c38; /* Lebih gelap sedikit saat hover */
+}
+
+/* Styling for the text */
+#compatibility-text {
+    font-size: 18px;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+#compatibility-value {
+    color: #4CAF50; /* Default hijau */
+}
+
+/* Styling tambahan untuk warna teks persentase */
+.compatibility-low {
+    color: #ff4c38; /* Merah untuk rendah */
+}
+
+.compatibility-medium {
+    color: #ffcc00; /* Kuning untuk lumayan */
+}
+
+.compatibility-high {
+    color: #4CAF50; /* Hijau untuk tinggi */
+}
