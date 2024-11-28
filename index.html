@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Cupid</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f8f9fa;
+        }
+
+        input {
+            padding: 10px;
+            margin: 10px;
+            width: 200px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .percentage-bar {
+            width: 100%;
+            background-color: #f3f3f3;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+
+        .percentage-fill {
+            height: 20px;
+            width: 0;
+            background-color: #4CAF50;
+            border-radius: 5px;
+            transition: width 1s ease;
+        }
+
+        .submit-btn {
+            background-color: #ff6f61;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+
+        .submit-btn:hover {
+            background-color: #ff4c38;
+        }
+
+        #compatibility-text {
+            font-size: 18px;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        #compatibility-value {
+            color: #4CAF50;
+        }
+
+    </style>
+</head>
+<body>
+    <h1><i class="fas fa-bullseye"></i> Selamat datang di Website Cupid!</h1>
+    <p><i class="fas fa-arrow-alt-circle-right"></i> Cocokkan diri lo dengan pasangan yang tepat.</p>
+
+    <!-- Form input nama -->
+    <div>
+        <label for="your-name">Nama lo:</label>
+        <input type="text" id="your-name" placeholder="Masukkan Nama Lo">
+    </div>
+
+    <div>
+        <label for="partner-name">Nama pacar lo:</label>
+        <input type="text" id="partner-name" placeholder="Masukkan Nama Pacar Lo">
+    </div>
+
+    <!-- Button untuk hitung kecocokan -->
+    <button class="submit-btn" onclick="calculateCompatibility()">Cek Kecocokan</button>
+
+    <!-- Persentase kecocokan -->
+    <div>
+        <p id="compatibility-text">Kecocokan: <span id="compatibility-value">0%</span></p>
+    </div>
+
+    <!-- Bar untuk animasi persentase -->
+    <div class="percentage-bar">
+        <div id="compatibility-bar" class="percentage-fill"></div>
+    </div>
+
+    <script>
+        // Fungsi untuk menghitung kecocokan
+        function calculateCompatibility() {
+            const name1 = document.getElementById('your-name').value;
+            const name2 = document.getElementById('partner-name').value;
+
+            if (name1 && name2) {
+                // Menghasilkan angka acak antara 30 hingga 100
+                let compatibility = Math.floor(Math.random() * 71) + 30; // Range: 30-100%
+
+                // Update teks dan bar kecocokan
+                document.getElementById('compatibility-text').style.display = 'block';
+                document.getElementById('compatibility-value').innerText = compatibility + '%';
+                document.getElementById('compatibility-bar').style.width = compatibility + '%';
+
+                // Ubah warna teks berdasarkan kecocokan
+                let compatibilityValue = document.getElementById('compatibility-value');
+                if (compatibility >= 80) {
+                    compatibilityValue.style.color = 'green'; // Tinggi
+                } else if (compatibility >= 50) {
+                    compatibilityValue.style.color = 'orange'; // Sedang
+                } else {
+                    compatibilityValue.style.color = 'red'; // Rendah
+                }
+            } else {
+                alert("Mohon masukkan nama lo dan nama pacar lo!");
+            }
+        }
+    </script>
+</body>
+</html>
